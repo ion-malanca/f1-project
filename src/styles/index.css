@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../images/mobile-main-background.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    color: #f0f8ff;
+}
+
+@media (min-width: 401px) {
+    body {
+        margin: 0 auto;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+}
+
+header img {
+    height: 60px;
+    width: auto;
+}
+
+.logo {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    position: relative;
+}
+
+.hamburger {
+    display: flex;
+    font-size: 2rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto;
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+}
+
+.navigation {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    background: rgba(0,0,0,0.95);
+    border-radius: 10px;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 1000;
+}
+
+.navigation.active {
+    display: flex;
+}
+
+.navigation li {
+    width: 100%;
+    color: black;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    display: block;
+    text-align: center;
+    border: 1px solid red;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background-color: red;
+    color: white;
+    border-color: white;
+}
+
+main {
+    padding-bottom: 2rem;
+}
+
+main h1 {
+    margin-left: 2rem;
+    margin-top: 2rem;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 40px;
+    background-color: black;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.left-content {
+    flex: 1;
+}
+
+.right-content {
+    flex: 0 0 auto;
+}
+
+.hero {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.hero-text {
+    font-size: 18px;
+    font-style: italic;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin: 0 1rem;
+    color: white;
+}
+
+.information {
+    margin: 2rem 1rem;
+    width: auto;
+    padding: 1rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 10px;
+    background-color: rgba(1, 254, 254, 0.85);
+}
+
+.information h2 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 0.75rem;
+    background-color: red;
+    position: relative;
+    left: -1rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.information p {
+    color: black;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.race-highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1.5rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 10px;
+    background-color: rgba(248, 0, 0, 0.85);
+    text-align: center;
+}
+
+.race-highlight h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.race-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: white;
+}
+
+.race-date {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.ticket-btn {
+    display: inline-block;
+    background-color: black;
+    color: #00ffff;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.ticket-btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.champion-section {
+    margin: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0);
+    border-radius: 15px;
+    border: 2px solid #ffd700;
+}
+
+.champion-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #ffd700;
+    font-family: "Bebas Neue", sans-serif;
+    background-color: black;
+}
+
+.champion-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background: black;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.champion-image img {
+    width: 30%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.champion-info h3 {
+    font-size: 1.8rem;
+    color: #ffd700;
+    font-family: "Bebas Neue", sans-serif;
+    background-color: black;
+}
+
+.champion-info .team-name {
+    font-size: 1.1rem;
+    color: #00ffff;
+    margin-bottom: 0.5rem;
+}
+
+.champion-info .champion-stats {
+    font-size: 0.9rem;
+    color: white;
+    margin: 0.3rem 0;
+}
+
+.champion-info .champion-quote {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #e0e0e0;
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+footer p {
+    color: white;
+    font-size: 14px;
+}
+
+footer a {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.modal {
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    max-width: 350px;
+    width: 90%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    position: relative;
+    padding: 1.5rem;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: red;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.close-modal:hover {
+    transform: scale(1.1);
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #ffd700;
+    background-color: #181e38;
+}
+
+.modal-small {
+    max-width: 400px;
+}
+
+.attributions-list {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.attributions-list p {
+    margin-top: 0.8rem;
+    font-weight: bold;
+    color: #ffd700;
+    background-color: #181e38;
+}
+
+.attributions-list ul {
+    margin-left: 1.5rem;
+    margin-top: 0.3rem;
+}
+
+.attributions-list li {
+    margin: 0.3rem 0;
+    font-size: 0.85rem;
+    color: white;
+    background-color: #181e38;
+}
+
+.information,
+.race-highlight,
+.champion-section {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

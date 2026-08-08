@@ -1,0 +1,125 @@
+.thank-you-card {
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 550px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #00ff00;
+    animation: fadeIn 0.5s ease;
+    margin: 2rem auto;
+}
+
+.thank-you-card h1 {
+    color: #00ff00;
+    margin-bottom: 1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+}
+
+.checkmark {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.submission-data {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.submission-data p {
+    color: #ccc;
+    margin: 0.5rem 0;
+}
+
+.submission-data strong {
+    color: #ffd700;
+}
+
+.thank-you-card p {
+    color: #ccc;
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.home-btn {
+    display: inline-block;
+    background: red;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.home-btn:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+.drivers-btn {
+    display: inline-block;
+    background: #00ffff;
+    color: black;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.drivers-btn:hover {
+    background: #00cccc;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .thank-you-card {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .thank-you-card h1 {
+        font-size: 1.8rem;
+    }
+    
+    .checkmark {
+        font-size: 3rem;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .home-btn, .drivers-btn {
+        padding: 10px 20px;
+    }
+}
+
+@media (min-width: 601px) {
+    .thank-you-card {
+        margin: 3rem auto;
+    }
+}

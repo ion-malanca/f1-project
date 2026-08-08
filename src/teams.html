@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete 2026 F1 teams and constructors with engine specifications, base locations, championships, and driver lineups">
+    <meta name="author" content="Ion Malanca">
+    <meta property="og:title" content="ApexGrid | Formula 1 Hub - Drivers, Teams & Stats">
+    <meta property="og:description" content="Your ultimate destination for F1 driver statistics, team performance, and race coverage">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ion-malanca.github.io/wdd231/project/">
+    <meta property="og:image" content="https://ion-malanca.github.io/wdd231/project/images/logo.png">
+    <title>ApexGrid | 2026 F1 Teams - Constructors & Stats</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/teams.css">
+    <link rel="stylesheet" href="styles/teams-large.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="scripts/teams.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="ApexGrid Website Logo" width="90" height="90">
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+        <nav>
+            <ul class="navigation" id="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="drivers.html">DRIVERS</a></li>
+                <li><a href="teams.html" class="active">TEAMS</a></li>
+                <li><a href="newsletter.html">NEWSLETTER</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Formula 1 Teams 2026</h1>
+        
+        <section class="controls">
+            <div class="control-group">
+                <label for="search">Search Teams:</label>
+                <input type="text" id="search" placeholder="🔍 Search team by name or base...">
+            </div>
+            <div class="control-group">
+                <label for="engineFilter">Filter by Engine:</label>
+                <select id="engineFilter">
+                    <option value="all">All Engines</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="teams-container">
+            <div class="loading-spinner">🏭 Loading teams...</div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>©<span id="currentYear"></span> | Ion Malanca | ApexGrid</p>
+        <p><a href="https://app.screencastify.com/watch/sC8EEyDcNpqSrofJAszE" target="_blank">Video Link</a></p>
+        <p><a href="#" id="attributionLink">📋 Attributions</a></p>
+    </footer>
+
+    <dialog id="teamModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close">✕</button>
+            <div id="modalContent"></div>
+        </div>
+    </dialog>
+
+    <dialog id="attributionModal" class="modal modal-small">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close">✕</button>
+            <div id="modalContent">
+                <h2>📚 Attributions</h2>
+                <div class="attributions-list">
+                    <p><strong>Images:</strong></p>
+                    <ul>
+                        <li>Formula 1 official media - Team and car images</li>
+                        <li>Background images from original project assets</li>
+                    </ul>
+                    <p><strong>Data:</strong></p>
+                    <ul>
+                        <li>Team statistics from 2026 F1 season data</li>
+                        <li>Constructor info compiled from official F1 records</li>
+                    </ul>
+                    <p><strong>Fonts:</strong></p>
+                    <ul>
+                        <li>Bebas Neue from Google Fonts</li>
+                        <li>Roboto from Google Fonts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </dialog>
+</body>
+</html>

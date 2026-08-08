@@ -1,0 +1,180 @@
+.form-container {
+    color: white;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    border: 2px solid red;
+    animation: fadeIn 0.5s ease;
+    margin: 2rem auto;
+    box-sizing: border-box;
+}
+
+.form-container h1 {
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+}
+
+.form-container p {
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+    background: white;
+}
+
+.form-group select option {
+    color: white;
+    background: #1a1a2e;
+    padding: 8px;
+}
+
+.form-group select option:hover,
+.form-group select option:focus {
+    background: red;
+    color: white;
+}
+
+.form-group select option:checked {
+    background: #ffd700;
+    color: black;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: red;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+.radio-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-weight: normal;
+}
+
+.radio-group input {
+    width: auto;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.submit-btn:hover {
+    background: #cc0000;
+    transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 1.5rem;
+        margin: 1rem;
+        max-width: calc(100% - 2rem);
+        width: calc(100% - 2rem);
+        border-radius: 15px;
+    }
+    
+    .form-container h1 {
+        font-size: 1.8rem;
+    }
+    
+    .radio-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .submit-btn {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .form-container {
+        padding: 1rem;
+        margin: 0.5rem;
+        max-width: calc(100% - 1rem);
+        width: calc(100% - 1rem);
+    }
+    
+    .form-container h1 {
+        font-size: 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 601px) {
+    .form-container {
+        margin: 3rem auto;
+    }
+}

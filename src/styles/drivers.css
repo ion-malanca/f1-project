@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../images/main-phone-others.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    color: #f0f8ff;
+}
+
+@media (min-width: 401px) {
+    body {
+        margin: 0 auto;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+}
+
+header img {
+    height: 60px;
+    width: auto;
+}
+
+.logo {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    position: relative;
+}
+
+.hamburger {
+    display: flex;
+    font-size: 2rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto;
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+}
+
+.navigation {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 10px;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 1000;
+}
+
+.navigation.active {
+    display: flex;
+}
+
+.navigation li {
+    width: 100%;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    display: block;
+    text-align: center;
+    border: 1px solid red;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navigation a:hover {
+    background-color: red;
+    color: white;
+    border-color: white;
+}
+
+.navigation a.active {
+    background-color: red;
+    color: white;
+    border-color: #ffd700;
+}
+
+.navigation a.active:hover {
+    background-color: #cc0000;
+    color: white;
+    border-color: #ffd700;
+}
+
+main h1 {
+    display: flex;
+    font-size: 40px;
+    color: white;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 1rem;
+    gap: 15px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    gap: 5px;
+}
+
+.control-group label {
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.controls input[type="text"] {
+    height: 42px;
+    width: 100%;
+    border: 2px solid red;
+    border-radius: 25px;
+    color: black;
+    padding: 0 15px;
+    font-size: 14px;
+    background: white;
+}
+
+.controls select {
+    height: 42px;
+    width: 100%;
+    border: 2px solid red;
+    border-radius: 25px;
+    color: black;
+    padding: 0 15px;
+    font-size: 14px;
+    background: white;
+}
+
+#drivers-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 1rem 2rem 1rem;
+}
+
+.driver-card {
+    background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(30,30,30,0.9) 100%);
+    border: 2px solid red;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.3s ease;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.driver-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffd700;
+}
+
+.driver-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    order: 1;
+}
+
+.info {
+    order: 2;
+}
+
+.driver-card h2 {
+    font-size: 28px;
+    color: #ffd700;
+    margin-bottom: 10px;
+    background-color: #16213e;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.driver-card p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #f0f8ff;
+}
+
+.driver-card .stats {
+    font-size: 13px;
+    color: #00ffff;
+    margin-top: 8px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.favorite-btn {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ffd700;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.8);
+    color: #ffd700;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.favorite-btn:hover {
+    background: #ffd700;
+    color: black;
+}
+
+.favorite-btn.favorited {
+    background: #ff4444;
+    color: white;
+    border-color: white;
+}
+
+.details-btn {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #00ffff;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.8);
+    color: #00ffff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.details-btn:hover {
+    background: #00ffff;
+    color: black;
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 3rem;
+    color: white;
+    font-size: 1.2rem;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.error-message {
+    text-align: center;
+    padding: 2rem;
+    color: #ff6666;
+    background: rgba(0,0,0,0.7);
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #ffd700;
+    font-size: 1.2rem;
+}
+
+.modal {
+    border: none;
+    border-radius: 15px;
+    padding: 0;
+    max-width: 350px;
+    width: 90%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    position: relative;
+    padding: 1.5rem;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: black;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.close-modal:hover {
+    transform: scale(1.1);
+}
+
+.modal-content h2 {
+    color: #ffd700;
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: #181e38;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.driver-detail {
+    text-align: center;
+}
+
+.driver-detail img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+.detail-stats {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.detail-stats p {
+    margin: 8px 0;
+    padding: 5px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: #f0f8ff;
+}
+
+.detail-stats strong {
+    color: #ffd700;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+footer p {
+    color: white;
+    font-size: 14px;
+}
+
+footer a {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+.modal-small {
+    max-width: 400px;
+}
+
+.attributions-list {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.attributions-list p {
+    margin-top: 0.8rem;
+    font-weight: bold;
+    color: #ffd700;
+    background-color: #181e38;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+}
+
+.attributions-list ul {
+    margin-left: 1.5rem;
+    margin-top: 0.3rem;
+}
+
+.attributions-list li {
+    margin: 0.3rem 0;
+    font-size: 0.85rem;
+    color: #e0e0e0;
+    background-color: #16213e;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
