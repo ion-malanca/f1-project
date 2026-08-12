@@ -1,3 +1,6 @@
+/* ===== RACES PAGE STYLES ===== */
+/* Mobile-First Design */
+
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +28,7 @@ body {
     }
 }
 
+/* ===== HEADER ===== */
 header img {
     height: 60px;
     width: auto;
@@ -115,6 +119,7 @@ header {
     border-color: #ffd700;
 }
 
+/* ===== MAIN CONTENT ===== */
 main h1 {
     display: flex;
     font-size: 40px;
@@ -176,117 +181,160 @@ main h1 {
     background: white;
 }
 
-#drivers-container {
+/* ===== RACES CONTAINER ===== */
+#races-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 0 1rem 2rem 1rem;
 }
 
-.driver-card {
+/* ===== RACE CARD ===== */
+.race-card {
     background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(30,30,30,0.9) 100%);
-    border: 2px solid red;
+    border: 2px solid #e10600;
     border-radius: 15px;
     padding: 15px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
     transition: transform 0.3s ease;
     animation: fadeInUp 0.5s ease forwards;
 }
 
-.driver-card:hover {
+.race-card:hover {
     transform: translateY(-5px);
     border-color: #ffd700;
 }
 
-/* Update the driver card image styles */
-
-.driver-card img {
-    width: 100%;
-    height: 150px; /* Fixed height */
-    object-fit: cover; /* This crops the image to fit nicely */
-    border-radius: 10px;
-    order: 1;
+.race-card .race-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
 }
 
-/* For larger screens */
-@media (min-width: 601px) {
-    .driver-card img {
-        width: 120px;
-        height: 120px; /* Square for desktop */
-        object-fit: cover;
-        border-radius: 50%; /* Optional: makes it circular */
-        order: 2;
-    }
+.race-card .race-round {
+    background: #e10600;
+    color: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-.driver-card img[src*="placeholder"] {
-    object-fit: contain;
-    background: #1a1a2e;
+.race-card .race-status {
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
-.info {
-    order: 2;
+.race-card .race-status.completed {
+    background: #006600;
+    color: #00ff00;
 }
 
-.driver-card h2 {
+.race-card .race-status.scheduled {
+    background: #665500;
+    color: #ffd700;
+}
+
+.race-card .race-status.live {
+    background: #660000;
+    color: #ff4444;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.race-card .race-name {
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 28px;
     color: #ffd700;
-    margin-bottom: 10px;
-    background-color: #16213e;
-    padding: 0.3rem 0.8rem;
-    border-radius: 8px;
-    display: inline-block;
-}
-
-.driver-card p {
-    font-size: 14px;
     margin: 5px 0;
+}
+
+.race-card .race-circuit {
+    font-size: 16px;
     color: #f0f8ff;
+    margin: 3px 0;
 }
 
-.driver-card .stats {
-    font-size: 13px;
-    color: #00ffff;
-    margin-top: 8px;
-    padding-top: 5px;
-    border-top: 1px solid rgba(255,255,255,0.2);
+.race-card .race-circuit .flag {
+    font-size: 20px;
+    margin-right: 8px;
 }
 
-.button-group {
+.race-card .race-details {
     display: flex;
-    gap: 10px;
-    margin-top: 12px;
     flex-wrap: wrap;
+    gap: 15px;
+    margin: 5px 0;
+    font-size: 14px;
+    color: #cccccc;
 }
 
-.favorite-btn {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ffd700;
-    border-radius: 20px;
-    background: rgba(0,0,0,0.8);
+.race-card .race-details span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.race-card .race-details .icon {
+    font-size: 18px;
+}
+
+.race-card .race-result {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.race-card .race-winner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
     color: #ffd700;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
 }
 
-.favorite-btn:hover {
-    background: #ffd700;
-    color: black;
+.race-card .race-winner img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.favorite-btn.favorited {
-    background: #ff4444;
-    color: white;
-    border-color: white;
+.race-card .race-winner .trophy {
+    font-size: 24px;
 }
 
-.details-btn {
-    flex: 1;
-    padding: 8px;
+.race-card .race-podium {
+    display: flex;
+    gap: 15px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #cccccc;
+}
+
+.race-card .race-podium .podium-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.race-card .race-podium .medal {
+    font-size: 18px;
+}
+
+.race-card .details-btn {
+    margin-top: 10px;
+    padding: 8px 20px;
     border: 1px solid #00ffff;
     border-radius: 20px;
     background: rgba(0,0,0,0.8);
@@ -294,13 +342,15 @@ main h1 {
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease;
+    width: 100%;
 }
 
-.details-btn:hover {
+.race-card .details-btn:hover {
     background: #00ffff;
     color: black;
 }
 
+/* ===== LOADING & ERRORS ===== */
 .loading-spinner {
     text-align: center;
     padding: 3rem;
@@ -326,11 +376,12 @@ main h1 {
     font-size: 1.2rem;
 }
 
+/* ===== MODAL ===== */
 .modal {
     border: none;
     border-radius: 15px;
     padding: 0;
-    max-width: 350px;
+    max-width: 400px;
     width: 90%;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     color: white;
@@ -381,33 +432,23 @@ main h1 {
     border-radius: 8px;
 }
 
-.driver-detail {
-    text-align: center;
+.race-detail .detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.driver-detail img {
-    width: 100%;
-    max-width: 200px;
-    border-radius: 10px;
-    margin: 1rem 0;
+.race-detail .detail-row .label {
+    color: #888;
 }
 
-.detail-stats {
-    text-align: left;
-    margin-top: 1rem;
-}
-
-.detail-stats p {
-    margin: 8px 0;
-    padding: 5px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    color: #f0f8ff;
-}
-
-.detail-stats strong {
+.race-detail .detail-row .value {
     color: #ffd700;
+    font-weight: bold;
 }
 
+/* ===== FOOTER ===== */
 footer {
     width: 100%;
     display: flex;
@@ -429,6 +470,7 @@ footer a {
     text-decoration: none;
 }
 
+/* ===== ATTRIBUTIONS MODAL ===== */
 .modal-small {
     max-width: 400px;
 }
@@ -459,6 +501,7 @@ footer a {
     background-color: #16213e;
 }
 
+/* ===== ANIMATIONS ===== */
 @keyframes fadeInUp {
     from {
         opacity: 0;

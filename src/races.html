@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete F1 race calendar with results, winners, and circuit information">
+    <meta name="author" content="Ion Malanca">
+    <meta property="og:title" content="ApexGrid | F1 Race Calendar & Results">
+    <meta property="og:description" content="Complete F1 race schedule with winners, circuits, and results">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ion-malanca.github.io/wdd231/project/">
+    <meta property="og:image" content="https://ion-malanca.github.io/wdd231/project/images/logo.png">
+    <title>ApexGrid | F1 Race Calendar - Results & Schedule</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/races.css">
+    <link rel="stylesheet" href="styles/races-large.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="scripts/races.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="ApexGrid Website Logo" width="90" height="90">
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+        <nav>
+            <ul class="navigation" id="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="drivers.html">DRIVERS</a></li>
+                <li><a href="teams.html">TEAMS</a></li>
+                <li><a href="races.html" class="active">RACES</a></li>
+                <li><a href="newsletter.html">NEWSLETTER</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Formula 1 Race Calendar</h1>
+        
+        <section class="controls">
+            <div class="control-group">
+                <label for="seasonSelect">Select Season:</label>
+                <select id="seasonSelect">
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="raceFilter">Filter by Type:</label>
+                <select id="raceFilter">
+                    <option value="all">All Races</option>
+                    <option value="Race">Grand Prix</option>
+                    <option value="Sprint">Sprint</option>
+                    <option value="1st Qualifying">Qualifying</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="searchRace">Search Races:</label>
+                <input type="text" id="searchRace" placeholder="🔍 Search by circuit or location...">
+            </div>
+        </section>
+
+        <section id="races-container">
+            <div class="loading-spinner">Loading races...</div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>©<span id="currentYear"></span> | Ion Malanca | ApexGrid</p>
+    </footer>
+    
+    <dialog id="raceModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close">✕</button>
+            <div id="modalContent"></div>
+        </div>
+    </dialog>
+    
+    <dialog id="attributionModal" class="modal modal-small">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close">✕</button>
+            <div id="modalContent">
+                <h2>📚 Attributions</h2>
+                <div class="attributions-list">
+                    <p><strong>Images:</strong></p>
+                    <ul>
+                        <li>Formula 1 official media - Circuit images</li>
+                        <li>Background images from original project assets</li>
+                    </ul>
+                    <p><strong>Data:</strong></p>
+                    <ul>
+                        <li>Race data from API-Sports Formula 1 API</li>
+                        <li>Circuit information from official F1 records</li>
+                    </ul>
+                    <p><strong>Fonts:</strong></p>
+                    <ul>
+                        <li>Bebas Neue from Google Fonts</li>
+                        <li>Roboto from Google Fonts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </dialog>
+</body>
+</html>
